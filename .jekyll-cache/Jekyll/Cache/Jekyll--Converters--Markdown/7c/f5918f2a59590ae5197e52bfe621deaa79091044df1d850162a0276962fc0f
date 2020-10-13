@@ -1,0 +1,122 @@
+I"�<h2 id="jekyll-blog-설정">Jekyll Blog 설정</h2>
+
+<h3 id="git-repository-생성">Git Repository 생성</h3>
+
+<ol>
+  <li>GitHub에서 새 repository 만들기
+    <ul>
+      <li>repository name: <code class="language-plaintext highlighter-rouge">&lt;yourname&gt;.github.io</code> 예)sangmile.github.io</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">git init</code> 명령어:</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init sangmile.github.io
+<span class="nb">cd </span>sangmile.github.io
+</code></pre></div></div>
+
+<ol>
+  <li>repo 추가 명령어:</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add origin https://github.com/sangmile/sangmile.github.io.git
+</code></pre></div></div>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">master</code> branch 생성:</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout <span class="nt">-b</span> master
+</code></pre></div></div>
+
+<h2 id="jekyll-theme-설정">Jekyll Theme 설정</h2>
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">_posts</code> 폴더 생성</p>
+
+    <p><code class="language-plaintext highlighter-rouge">_posts</code> 폴더 아래에 새 글을 작성할 것임. <br />
+ 파일명은 다음 형식을 따라야 함. <br />
+ <code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.md</code></p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">mkdir </span>_posts
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">_config.yml</code> 파일 생성</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">touch </span>_config.yml
+</code></pre></div>    </div>
+
+    <p><strong>a. 내용 입력</strong>  <br />
+     원하는 theme의 <code class="language-plaintext highlighter-rouge">_config.yml</code> 내용을 복사 붙여넣기한다.<br />
+     여기서는 minimal-misatakes-jekyll 테마를 사용.</p>
+
+    <p><strong>b. 내용 수정</strong></p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="na">theme</span><span class="pi">:</span> <span class="s2">"</span><span class="s">minimal-mistakes-jekyll"</span>
+ <span class="na">remote_theme</span><span class="pi">:</span> <span class="s2">"</span><span class="s">mmistakes/minimal-mistakes"</span>
+ <span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://sangmile.github.io"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">index.html</code> 파일 생성 후 아래 내용 입력:</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="s">---</span>
+ <span class="s">layout</span><span class="pi">:</span> <span class="s">home</span>
+ <span class="na">author_profile</span><span class="pi">:</span> <span class="no">true</span>
+ <span class="s">---</span>    
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>첫 글 만들고 포스트 하기:</p>
+
+    <p><strong>a. 파일 생성</strong></p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">cd </span>_posts
+ <span class="nb">touch </span>2020-10-13-first-post.md
+</code></pre></div>    </div>
+
+    <p><strong>b. 내용 입력</strong></p>
+    <blockquote>
+      <p>각 파일마다 가장 위에 아래 포맷을 항상 입력해야 한다.</p>
+    </blockquote>
+
+    <div class="language-m highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="o">---</span>
+ <span class="nb">title</span><span class="p">:</span> <span class="s2">"Jekyll GitHub Blog"</span>
+ <span class="nb">date</span><span class="p">:</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">13</span> <span class="mi">00</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mi">00</span> <span class="o">+</span><span class="mi">0400</span>
+ <span class="nb">categories</span><span class="p">:</span> <span class="n">jekyll</span> <span class="n">configuration</span>
+ <span class="o">---</span>    
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="로컬-테스트">로컬 테스트</h2>
+<h3 id="사전-조건">사전 조건</h3>
+
+<ol>
+  <li>ruby 설치
+    <blockquote>
+      <p>We recommend using Bundler to install and run Jekyll. Bundler manages Ruby gem dependencies, reduces Jekyll build errors, and prevents environment-related bugs. To install Bundler:</p>
+    </blockquote>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> apt install ruby-dev
+</code></pre></div>    </div>
+  </li>
+  <li>bundler jekyll 설치
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt install bundler jekyll
+</code></pre></div>    </div>
+  </li>
+  <li>Gemfile 생성 후 다음 내용 입력
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source "https://rubygems.org"
+gem "minimal-mistakes-jekyll"
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Bundler</code> 명령어 실행
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle
+</code></pre></div>    </div>
+  </li>
+  <li>Local 테스트
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle exec jekyll serve
+</code></pre></div>    </div>
+  </li>
+</ol>
+:ET

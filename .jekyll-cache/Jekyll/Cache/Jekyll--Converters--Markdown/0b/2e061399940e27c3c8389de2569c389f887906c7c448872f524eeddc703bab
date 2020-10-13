@@ -1,0 +1,10 @@
+I"F<h1 id="jekyll-blog-설정">Jekyll Blog 설정</h1>
+<h2 id="git-repository-생성">Git Repository 생성</h2>
+<ol>
+  <li>GitHub 새 repository 만들기
+    <ul>
+      <li>repository name: <code class="language-plaintext highlighter-rouge">&lt;yourname&gt;.github.io</code> 예)sangmile.github.io</li>
+    </ul>
+  </li>
+</ol>
+:ET
