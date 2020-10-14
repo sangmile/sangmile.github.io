@@ -1,5 +1,5 @@
 ---
-title: "Jekyll GitHub Blog"
+title: "Jekyll Theme로 GitHub Blog 만들기"
 date: 2020-10-13 00:52:00 +0400
 categories: jekyll configuration
 ---
