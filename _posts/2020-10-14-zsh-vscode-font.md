@@ -1,7 +1,7 @@
 ---
 title: "ZSH Font Setting in VSCODE"
 date: 2020-10-13 00:52:00 +0400
-categories: zsh font vscode configuration
+categories: env
 ---
 
 VSCode에서 zsh font 깨짐 현상
