@@ -1,0 +1,14 @@
+- name: Pages
+  link: /#
+  dropdown:
+    - name: Page With Menubar
+      link: /page-3/
+- name: Blog
+  link: /blog/#
+  dropdown:
+    - name: DevOps
+      link: /blog/2020-11-09-ecs-cicd.md
+- name: Daily
+  link: /daily/
+# - name: Themes
+#   link: /themes/#

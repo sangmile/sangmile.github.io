@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<!-- Post페이지에 목차 표현 추가 -->
+{% if page.toc %}
+{% assign contentsTitle = page.toc_title | default: 'Contents' %}
+{% include toc.html html=content class='menu-list' h_min=2 h_max=3 contents_title=contentsTitle %}
+{% endif %}
+<div class="content">
+
+    <p>Published: {{ page.date | date: "%b %-d, %Y" }} by {{ page.author }}</p>
+
+    {{ content }}
+</div>
+
+<div class="tags">
+    {% for tag in page.tags %}
+    <span class="tag is-primary">{{ tag }}</span>
+    {% endfor %}
+</div>
+
+{% unless site.hide_share_buttons %}
+{% include share-buttons.html %}
+{% endunless %}
+
+{% if site.disqus.shortname %}
+{% include disqus.html %}
+{% endif %}
