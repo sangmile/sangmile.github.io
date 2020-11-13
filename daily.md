@@ -7,7 +7,7 @@ title: Daily History
     {% for daily in site.daily %}
         <li>
             <h3>
-                <a href="{{ site.baseurl }}{{ daily.url }}">
+                <a href="{{ themes.url | prepend: site.baseurl }}">
                     {{ daily.title }}
                 </a>
                 <p class="post-excerpt">{{ daily.description | truncate: 160 }}</p>
